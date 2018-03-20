@@ -22,12 +22,13 @@ while True:
                 nam_1 = -10 * a**2 + 21 * a * x + 27 * x**2
                 G = nam / nam_1
                 F = sinh(2 * a**2 + 21 * a * x + 10 * x**2)
-                Y = -asin(4 * a**2 - 3 * a * x - 7 * x**2)
-                if -1 <= Y <= 1:
+                try:
+                    Y = -asin(4 * a**2 - 3 * a * x - 7 * x**2)
+                    if -1 <= Y <= 1:
+                        continue
+                except ValueError:
+                    #print ('Значения не удовлетворяют условию Y. Введите новые значения')
                     continue
-            except ValueError:
-                #print ('Значения не удовлетворяют условию Y. Введите новые значения')
-                continue
             except ZeroDivisionError:
                 #print ('Не удается найти G. На ноль делить нельзя! Введите новые значения')
                 break
